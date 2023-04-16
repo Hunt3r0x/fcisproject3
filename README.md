@@ -2,4 +2,4 @@
 
 > Simple HTML/CSS website 
 ![Creative Agency](/images/screenshot.png 'IT company')
-[LIVE PREVIEW]()
+[LIVE PREVIEW](https://hunt3r0x.github.io/fcisproject3)
