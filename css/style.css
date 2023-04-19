@@ -1,254 +1,423 @@
+/* Imports the Google Fonts stylesheet for the Poppins font family with various font weights */
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+/* Defines custom CSS variables for the primary and secondary colors */
 :root {
   --primary-color: #f60f20;
   --secondary-color: #1b206e;
 }
 
 /* BASE STYLES */
+/* Applies basic styles to all elements */
 * {
   box-sizing: border-box;
+  /* Ensures that padding and border are included in the element's total width and height */
   margin: 0;
+  /* Removes default margin */
   padding: 0;
+  /* Removes default padding */
 }
 
+/* Applies styles to the body and headings */
 html,
 body {
   font-family: 'Poppins', sans-serif;
+  /* Sets the default font family for the webpage */
   color: #111;
+  /* Sets the default text color */
 }
 
+/* Applies styles to h1 elements */
 h1 {
   font-size: 30px;
+  /* Sets the font size for h1 elements */
   font-weight: 500;
+  /* Sets the font weight for h1 elements */
 }
 
+/* Applies styles to paragraphs */
 p {
   margin: 20px 0 10px;
+  /* Sets the margin for paragraphs */
   font-size: 1.1rem;
+  /* Sets the font size for paragraphs */
 }
 
+/* Applies styles to section elements */
 section {
   display: flex;
+  /* Displays section elements as flex containers */
   flex-direction: column;
+  /* Sets the direction of the flex container to column */
   height: 100vh;
+  /* Sets the height of the section to the full viewport height */
   align-items: center;
+  /* Centers the flex items along the cross axis */
   padding: 100px;
+  /* Adds padding to the section */
   margin-top: 60px;
+  /* Adds margin to the top of the section */
 }
 
+/* Overrides styles for the home section */
 section.home {
   flex-direction: row;
+  /* Overrides the flex-direction property to set the direction to row */
   margin-top: 0;
+  /* Overrides the margin-top property to remove the margin */
 }
 
 /* BUTTON */
+/* Applies styles to button elements */
 .btn {
   cursor: pointer;
+  /* Sets the cursor to a pointer on hover */
   display: inline-block;
+  /* Displays the button as an inline-block element */
   background: var(--primary-color);
+  /* Sets the background color to the primary color */
   color: #fff;
+  /* Sets the text color to white */
   text-decoration: none;
+  /* Removes underline on links */
   padding: 10px 30px;
+  /* Adds padding to the button */
   margin: 20px 0;
+  /* Adds margin to the button */
   border: 0;
+  /* Removes default border */
 }
 
+/* Applies styles to button elements on hover */
 .btn:hover {
   transform: scale(0.98);
+  /* Scales down the button on hover */
 }
 
+/* Applies styles to the logo element */
 .logo {
   position: absolute;
+  /* Sets the position of the logo to absolute */
   top: 30px;
+  /* Sets the top position of the logo */
   left: 100px;
+  /* Sets the left position of the logo */
   font-size: 2rem;
+  /* Sets the font size of the logo */
   font-weight: 700;
+  /* Sets the font weight of the logo */
   z-index: 20;
+  /* Sets the z-index of the logo */
 }
 
 /* TOGGLE */
+/* Applies styles to the toggle button element */
 .toggle {
   position: fixed;
+  /* Sets the position of the toggle button to fixed */
   top: 0;
+  /* Sets the top position of the toggle button */
   right: 0;
+  /* Sets the right position of the toggle button */
   width: 60px;
+  /* Sets the width of the toggle button */
   height: 60px;
+  /* Sets the height of the toggle button */
   background: var(--primary-color) url(../images/menu.png);
+  /* Sets the background color and image of the toggle button */
   background-size: 30px;
+  /* Sets the size of the background image */
   background-position: center;
+  /* Centers the background image */
   background-repeat: no-repeat;
+  /* Prevents the background image from repeating */
   z-index: 20;
+  /* Sets the z-index of the toggle button */
   cursor: pointer;
+  /* Sets the cursor to a pointer */
 }
 
+/* Applies styles to the active toggle button element */
 .toggle.active {
   background: var(--primary-color) url(../images/close.png);
+  /* Changes the background image of the toggle button when active */
   background-size: 25px;
+  /* Changes the size of the background image when active */
   background-position: center;
+  /* Centers the background image when active */
   background-repeat: no-repeat;
+  /* Prevents the background image from repeating when active */
 }
 
 /* NAVIGATION */
+/* Applies styles to the navigation menu element */
 .navigation {
   position: fixed;
+  /* Sets the position of the navigation menu to fixed */
   top: 0;
+  /* Sets the top position of the navigation menu */
   left: 100%;
+  /* Sets the left position of the navigation menu */
   width: 100%;
+  /* Sets the width of the navigation menu */
   height: 100%;
+  /* Sets the height of the navigation menu */
   background-color: #fff;
+  /* Sets the background color of the navigation menu */
   z-index: 15;
+  /* Sets the z-index of the navigation menu */
   display: flex;
+  /* Displays the navigation menu as a flex container */
   justify-content: center;
+  /* Centers the flex items along the main axis */
   align-items: center;
+  /* Centers the flex items along the cross axis */
 }
 
+/* Applies styles to the navigation menu element when active */
 .navigation.active {
   left: 0;
+  /* Moves the navigation menu to the left when active */
 }
 
+/* Applies styles to the unordered list element within the navigation menu */
 .navigation ul {
   position: relative;
+  /* Sets the position of the unordered list to relative */
 }
 
+/* Applies styles to list items within the unordered list element */
 .navigation ul li {
   position: relative;
+  /* Sets the position of the list item to relative */
   list-style: none;
+  /* Removes the default bullet points for list items */
   text-align: center;
+  /* Centers the text within the list item */
 }
 
+/* Applies styles to links within the list items */
 .navigation ul li a {
   font-size: 2.2rem;
+  /* Sets the font size for links within list items */
   color: #111;
+  /* Sets the color for links within list items */
   text-decoration: none;
+  /* Removes underline on links */
   font-weight: 300;
+  /* Sets the font weight for links within list items */
 }
 
+/* Applies styles to links within list items on hover */
 .navigation ul li a:hover {
   color: var(--primary-color);
+  /* Changes the color of links within list items on hover */
 }
 
+/* Applies styles to the social media bar within the navigation menu */
 .navigation .social-bar {
   position: absolute;
+  /* Sets the position of the social media bar to absolute */
   top: 0;
+  /* Sets the top position of the social media bar */
   left: 0;
+  /* Sets the left position of the social media bar */
   width: 60px;
+  /* Sets the width of the social media bar */
   height: 100%;
+  /* Sets the height of the social media bar */
   display: flex;
+  /* Displays the social media bar as a flex container */
   justify-content: center;
+  /* Centers the flex items along the main axis */
   align-items: center;
+  /* Centers the flex items along the cross axis */
 }
 
+/* Applies styles to links within the social media bar */
 .navigation .social-bar a {
   display: inline-block;
+  /* Displays the links within the social media bar as inline-block elements */
   transform: scale(0.5);
+  /* Scales down the links within the social media bar */
 }
 
+/* Applies styles to the email icon within the navigation menu */
 .navigation .email-icon {
   position: absolute;
+  /* Sets the position of the email icon to absolute */
   bottom: 20px;
+  /* Sets the bottom position of the email icon */
   transform: scale(0.5);
+  /* Scales down the email icon */
 }
 
 /* HOMEPAGE */
+/* Applies styles to the content within the home section */
 .home-content {
   position: relative;
+  /* Sets the position of the home section content to relative */
   z-index: 10;
+  /* Sets the z-index of the home section content */
   max-width: 600px;
+  /* Sets the maximum width of the home section content */
 }
 
+/* Applies styles to the image within the home section */
 .home-img {
   position: absolute;
+  /* Sets the position of the home section image to absolute */
   bottom: 0;
+  /* Sets the bottom position of the home section image */
   right: 0;
+  /* Sets the right position of the home section image */
   height: 110%;
+  /* Sets the height of the home section image to 110% */
 }
 
 /* SERVICES PAGE */
+/* Applies styles to the services section */
 .services {
   margin-top: 40px;
+  /* Adds margin to the top of the services section */
   display: grid;
+  /* Displays the services section as a grid container */
   grid-template-columns: repeat(3, 1fr);
+  /* Sets the number of columns in the grid to 3 */
   gap: 40px;
+  /* Sets the gap between grid items to 40px */
   text-align: center;
+  /* Centers the text within the grid items */
 }
 
+/* Applies styles to service items within the services section */
 .services .service {
   padding: 30px;
+  /* Adds padding to the service items */
 }
 
+/* Applies styles to service items within the services section on hover */
 .services .service:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* Adds a box shadow to the service items on hover */
 }
 
+/* Applies styles to the heading within service items */
 .services .service h2 {
   font-size: 24px;
+  /* Sets the font size for the heading within service items */
   font-weight: 500;
+  /* Sets the font weight for the heading within service items */
   margin-top: 20px;
+  /* Adds margin to the top of the heading within service items */
   color: var(--secondary-color);
+  /* Sets the color of the heading within service items */
 }
 
+/* Applies styles to the icon within service items */
 .services .service .icon img {
   max-width: 100px;
+  /* Sets the maximum width of the icon within service items */
 }
 
 /* WORK PAGE */
+/* Applies styles to the portfolio section */
 .portfolio {
   display: flex;
+  /* Displays the portfolio section as a flex container */
   flex-wrap: wrap;
+  /* Allows flex items to wrap within the portfolio section */
   justify-content: center;
+  /* Centers the flex items along the main axis */
   margin-top: 20px;
+  /* Adds margin to the top of the portfolio section */
 }
 
+/* Applies styles to items within the portfolio section */
 .portfolio .item {
   position: relative;
+  /* Sets the position of items within the portfolio section to relative */
   width: 300px;
+  /* Sets the width of items within the portfolio section to 300px */
   height: 300px;
+  /* Sets the height of items within the portfolio section to 300px */
   margin: 5px;
+  /* Adds margin around items within the portfolio section */
 }
 
+/* Applies styles to images within items in the portfolio section */
 .portfolio .item img {
   width: 100%;
+  /* Sets the width of images within items in the portfolio section to 100% */
   height: 100%;
+  /* Sets the height of images within items in the portfolio section to 100% */
 }
 
+/* Applies styles to the action element within items in the portfolio section */
 .portfolio .item .action {
   position: absolute;
+  /* Sets the position of the action element within items in the portfolio section to absolute */
   top: 0;
+  /* Sets the top position of the action element within items in the portfolio section */
   left: 0;
+  /* Sets the left position of the action element within items in the portfolio section */
   width: 100%;
+  /* Sets the width of the action element within items in the portfolio section to 100% */
   height: 100%;
+  /* Sets the height of the action element within items in the portfolio section to 100% */
   background: rgba(0, 0, 0, 0.8);
+  /* Sets the background color of the action element within items in the portfolio section */
   display: flex;
+  /* Displays the action element within items in the portfolio section as a flex container */
   justify-content: center;
+  /* Centers the flex items along the main axis */
   align-items: center;
+  /* Centers the flex items along the cross axis */
   opacity: 0;
+  /* Sets the opacity of the action element within items in the portfolio section to 0 */
   transition: 0.5s;
+  /* Adds a transition effect to the action element within items in the portfolio section */
 }
 
+/* Applies styles to the action element within items in the portfolio section on hover */
 .portfolio .item:hover .action {
   opacity: 1;
+  /* Sets the opacity of the action element within items in the portfolio section to 1 on hover */
 }
 
+/* Applies styles to links within the action element within items in the portfolio section */
 .portfolio .item .action a {
   display: inline-block;
+  /* Displays links within the action element within items in the portfolio section as inline-block elements */
   color: #fff;
+  /* Sets the color of links within the action element within items in the portfolio section to white */
   text-decoration: none;
+  /* Removes underline on links */
   border: 1px solid #fff;
+  /* Adds a 1px white border to links within the action element within items in the portfolio section */
   padding: 5px 15px;
+  /* Adds padding to links within the action element within items in the portfolio section */
 }
 
 /* CONTACT */
+/* Applies styles to the contact section */
 .contact {
   position: relative;
+  /* Sets the position of the contact section to relative */
   width: 100%;
+  /* Sets the width of the contact section to 100% */
   margin-top: 50px;
+  /* Adds margin to the top of the contact section */
   display: flex;
+  /* Displays the contact section as a flex container */
   justify-content: space-between;
+  /* Creates space between flex items along the main axis */
   align-items: flex-start;
+  /* Aligns flex items along the cross axis to the top */
 }
 
 .contact-form {
+  /* Defines the style for the contact form section*/
   position: relative;
   background: #f9f9f9;
   width: calc(100% - 400px);
@@ -256,26 +425,31 @@ section.home {
 }
 
 .contact-form form {
+  /* Defines the style for the form within the contact form section */
   width: 100%;
 }
 
 .contact-form .row {
+  /* Defines the style for the rows within the contact form section */
   width: 100%;
   display: flex;
 }
 
 .contact-form .input50 {
+  /* Defines the style for the input fields that take up 50% of the row within the contact form section */
   width: 50%;
   margin: 0 10px;
 }
 
 .contact-form .input100 {
+  /* Defines the style for the input fields that take up 100% of the row within the contact form section */
   width: 100%;
   margin: 0 10px;
 }
 
 .contact-form .row input,
 .contact-form .row textarea {
+  /* Defines the style for the input and text fields within the rows in the contact form section */
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: #111;
@@ -290,10 +464,12 @@ section.home {
 }
 
 .contact-form .row textarea {
+  /* Defines the style for the text area within the rows in the contact form section */
   height: 150px;
 }
 
 .contact-form .row input[type='submit'] {
+  /* Defines the style for the submit button within the rows in the contact form section */
   background-color: var(--secondary-color);
   color: #fff;
   margin: 0;
@@ -305,74 +481,90 @@ section.home {
 }
 
 .contact-info {
+  /* Defines the style for the contact information section */
   width: 350px;
   background: #f9f9f9;
   padding: 60px 40px 20px;
 }
 
 .contact-info .info-box {
+  /* Defines the style for the boxes within the contact information section */
   display: flex;
   align-items: flex-start;
   margin-bottom: 40px;
 }
 
 .contact-info .info-box .contact-icon {
+  /* Defines the style for the contact icons within the boxes in the contact information section */
   width: 20px;
   margin-right: 40px;
 }
 
 .contact-info .info-box .details h4 {
+  /* Defines the style for the headers within the boxes in the contact information section */
   color: var(--secondary-color);
 }
 
 .contact-info .info-box .details p,
 .contact-info .info-box .details a {
+  /* Defines the style for the paragraph and link text within the boxes in the contact information section */
   color: #111;
 }
 
 @media (max-width: 1068px) {
+
+  /* Media query for screen sizes smaller than or equal to 1068px */
   .home-img {
     display: none;
   }
 
   .logo {
+    /* Defines the style for the logo on screens smaller than or equal to 1068px */
     top: 10px;
     left: 40px;
     font-size: 1.5rem;
   }
 
   section {
+    /* Defines the style for the sections on screens smaller than or equal to 1068px */
     padding: 100px 40px;
   }
 
   .navigation ul li a {
+    /* Defines the style for the navigation links on screens smaller than or equal to 1068px */
     font-size: 2rem;
   }
 
   .services {
+    /* Defines the style for the services section on screens smaller than or equal to 1068px */
     grid-template-columns: repeat(2, 1fr);
   }
 
   .contact {
+    /* Defines the style for the contact section on screens smaller than or equal to 1068px */
     flex-direction: column;
   }
 
   .contact-form {
+    /* Defines the style for the contact form section on screens smaller than or equal to 1068px */
     width: 100%;
     padding: 30px 30px 20px;
   }
 
   .contact-form .row {
+    /* Defines the style for the rows within the contact form section on screens smaller than or equal to 1068px */
     flex-direction: column;
   }
 
   .contact-form .input50,
   .contact-form .input100 {
+    /* Defines the style for the input fields within the rows in the contact form section on screens smaller than or equal to 1068px */
     width: 100%;
     margin: 0;
   }
 
   .contact-info {
+    /* Defines the style for the contact information section on screens smaller than or equal to 1068px */
     width: 100%;
     margin-top: 20px;
     padding: 30px 30px 20px;
@@ -380,11 +572,16 @@ section.home {
 }
 
 @media (max-width: 768px) {
+
+  /* Media query for screen sizes smaller than or equal to 768px /
+  .services {
+  / Defines the style for the services section on screens smaller than or equal to 768px */
   .services {
     grid-template-columns: 1fr;
   }
 
   .services .service {
+    /* Defines the style for the service boxes within the services section on screens smaller than or equal to 768px */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 }
